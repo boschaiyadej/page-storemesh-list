@@ -60,10 +60,10 @@
               id="filter-select"
               class="filter-select"
             >
-              <option value=""></option>
-              <option value="option1">Option 1</option>
-              <option value="option2">Option 2</option>
-              <option value="option3">Option 3</option>
+              <option value="">Select Filter</option>
+              <option value="<30000"><30000</option>
+              <option value="30000-60000">30000 - 60000</option>
+              <option value=">60000">>60000</option>
             </select>
           </div>
         </div>
@@ -73,12 +73,30 @@
       <div class="data-section">
         <div class="list-head">
           <span>Data</span>
-          <div>Sort by <i class="fa-solid fa-caret-down"></i></div>
+          <div class="sort-quantity" id="sort-toggle">
+            Sort by
+            <i class="fa-solid fa-caret-up" id="sort-icon"></i>
+          </div>
         </div>
 
-        <!-- data list -->
-        <div class="data-list">
-          <div class="data-card"></div>
+        <!-- Spinner loading indicator -->
+        <div class="spinner" id="loading-spinner">
+          <div class="spinner-circle"></div>
+        </div>
+
+        <!-- Data list -->
+        <div class="data-list"></div>
+
+        <div class="data-pagination">
+          <div class="btn-pagination btn-pagination-left">
+            <i class="fa-solid fa-chevron-left"></i>
+          </div>
+          <div class="btn-pagination">
+            <p class="pagination-number"></p>
+          </div>
+          <div class="btn-pagination btn-pagination-right">
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
         </div>
       </div>
     </section>
