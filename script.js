@@ -4,12 +4,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const paginationLeft = document.querySelector(".btn-pagination-left");
   const paginationRight = document.querySelector(".btn-pagination-right");
   const paginationNumber = document.querySelector(".pagination-number");
-  const itemsPerPage = 8;
   let currentPage = 1;
   let data = [];
   let filteredData = [];
   const loadingSpinner = document.getElementById("loading-spinner");
   let sortDirection = "asc";
+  let itemHeight = 110;
+  let itemsPerPage = 7;
 
   // api
   async function fetchData() {
@@ -29,6 +30,14 @@ document.addEventListener("DOMContentLoaded", () => {
       dataList.innerHTML = `<p>Error loading data.</p>`;
     } finally {
       loadingSpinner.style.display = "none";
+    }
+  }
+
+  function calculateItemsPerPage() {
+    const vh = window.innerHeight;
+    itemsPerPage = Math.floor(vh / itemHeight);
+    if (itemsPerPage < 1) {
+      itemsPerPage = 1;
     }
   }
 
@@ -150,6 +159,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     sortData("quantity", sortDirection);
   }
+
+  calculateItemsPerPage();
+  window.addEventListener("resize", calculateItemsPerPage);
 
   fetchData();
 });

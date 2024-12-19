@@ -10,7 +10,7 @@ body {
     color: #333;
 }
 
-/* navbar */
+/* Navbar */
 .navbar {
     padding: 10px 20px;
 }
@@ -25,6 +25,7 @@ body {
 
 .navbar-logo img {
     width: 300px;
+    /* Desktop logo size */
 }
 
 .navbar-menu a {
@@ -42,7 +43,6 @@ body {
     display: flex;
     align-items: center;
     background-color: #BDBDBD;
-    ;
     border-radius: 10px;
     padding: 10px 10px;
 }
@@ -50,6 +50,10 @@ body {
 .navbar-search i {
     margin-right: 5px;
     color: #333;
+}
+
+.search-mobile {
+    display: none;
 }
 
 .navbar-search input {
@@ -87,23 +91,20 @@ body {
     background-color: #BDBDBD;
     border-radius: 100%;
     padding: 10px;
-
 }
 
 .navbar-user i:hover {
     color: #007bff;
 }
 
-/* content */
-
+/* Content */
 .content {
     display: flex;
     gap: 20px;
     padding: 0 20px;
 }
 
-/* sidebar */
-
+/* Sidebar */
 .sidebar {
     width: 300px;
     max-height: 80vh;
@@ -139,8 +140,7 @@ body {
     color: #333;
 }
 
-/* data section */
-
+/* Data section */
 .data-section {
     width: 90%;
     height: fit-content;
@@ -191,8 +191,7 @@ body {
     gap: 10px;
 }
 
-/* data pagination */
-
+/* Data pagination */
 .data-pagination {
     display: flex;
     justify-content: end;
@@ -241,5 +240,87 @@ body {
 
     100% {
         transform: rotate(360deg);
+    }
+}
+
+/* Responsive Mobile 320*568 */
+@media (max-width: 568px) {
+
+
+    .navbar {
+        background-color: #BDBDBD;
+        padding: 20px 10px;
+    }
+
+    .navbar-user {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-right: 10px;
+    }
+
+    .navbar-user i {
+        font-size: 18px;
+    }
+
+
+    .search-mobile {
+        display: flex;
+    }
+
+    .navbar-logo img {
+        width: 200px;
+    }
+
+
+    .data-card {
+        font-size: 14px;
+    }
+
+    .data-pagination {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .btn-pagination {
+        padding: 2px 10px;
+        font-size: 14px;
+    }
+}
+
+/* Responsive  320*890 */
+@media (max-width: 890px) {
+
+    .navbar-menu,
+    .navbar-search,
+    .fa-user {
+        display: none;
+    }
+}
+
+/* Responsive  320*758 */
+@media (max-width: 758px) {
+
+    .sidebar,
+    .navbar-menu,
+    .navbar-search,
+    .fa-user,
+    .sort-quantity {
+        display: none;
+    }
+
+    .content {
+        flex-direction: column;
+        gap: 5px;
+        padding: 5px;
+    }
+
+    .data-section {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .data-list {
+        padding: 0;
     }
 }
