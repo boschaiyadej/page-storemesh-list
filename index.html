@@ -4,9 +4,105 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Storemesh List Page</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar-container">
+        <div class="navbar-left">
+          <!-- logo -->
+          <div class="navbar-logo">
+            <a href="#"
+              ><img
+                src="https://lh5.googleusercontent.com/i3QtT-21C5q4JYaK8wxRbI-hlvqboQ8m7_9OSzp5LrmFuSTd3n9tshcNMzXYuqqw2jscym-F1iShn8-R1J38g20=w16383"
+                alt="storemesh-logo"
+                class="storemesh-logo"
+            /></a>
+          </div>
+
+          <!-- menu -->
+          <div class="navbar-menu">
+            <a href="#">Menu 1</a>
+            <a href="#">Menu 2</a>
+            <a href="#">Menu 3</a>
+          </div>
+        </div>
+
+        <div class="navbar-right">
+          <!-- search box -->
+          <div class="navbar-search">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search" />
+          </div>
+
+          <!-- user  -->
+          <div class="navbar-user">
+            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-user"></i>
+            <i class="fas fa-search search-mobile"></i>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="content">
+      <!-- sidebar -->
+      <aside class="sidebar">
+        <div>
+          <h2 class="sidebar-title">Filter</h2>
+          <div class="filter">
+            <select
+              name="filter-select"
+              id="filter-select"
+              class="filter-select"
+            >
+              <option value="">Select Filter</option>
+              <option value="<30000"><30000</option>
+              <option value="30000-60000">30000 - 60000</option>
+              <option value=">60000">>60000</option>
+            </select>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Data section -->
+      <div class="data-section">
+        <div class="list-head">
+          <span>Data</span>
+          <div class="sort-quantity" id="sort-toggle">
+            Sort by
+            <i class="fa-solid fa-caret-up" id="sort-icon"></i>
+          </div>
+        </div>
+
+        <!-- Spinner loading -->
+        <div class="spinner" id="loading-spinner">
+          <div class="spinner-circle"></div>
+        </div>
+
+        <!-- Data list -->
+        <div class="data-list"></div>
+
+        <div class="data-pagination">
+          <div class="btn-pagination btn-pagination-left">
+            <i class="fa-solid fa-chevron-left"></i>
+          </div>
+          <div class="btn-pagination">
+            <p class="pagination-number"></p>
+          </div>
+          <div class="btn-pagination btn-pagination-right">
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
